@@ -11,6 +11,8 @@
 Name: <input type="text" name="name"><br>
 ID: <input type="text" name="id"><br>
 Location: <input type="text" name="loc"><br>
+Account Number: <input type="text" name="account_num"><br>
+Balance: <input type="text" name="balance"><br>
 <input type="submit">
 </form>
 

@@ -23,6 +23,8 @@ Your id is: <?php echo $_POST["id"]; ?>
     $id = $_POST["id"];
     $name = $_POST["name"];
     $loc = $_POST["loc"];
+    $account = $_POST["account_num"];
+    $balance = $_POST["balance"];
     echo $name;
     
     $result = mysqli_query($conn, "INSERT INTO Chapter (chapter_id, chapter_name, chapter_location) VALUES
@@ -30,6 +32,9 @@ Your id is: <?php echo $_POST["id"]; ?>
     if($result) {
         echo "Success";
     } else { echo "Failed";}
+    
+    $sql = mysqli_query($conn,"INSERT INTO Account (account_num, chapter_id, balance) VALUES
+    ('$account', '$id', '$balance')");
     
     $sqlselect = "SELECT * FROM Chapter";
     $newresult = $conn->query($sqlselect);
