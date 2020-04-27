@@ -33,7 +33,8 @@ echo "Connected successfully";
 $conn->close();
 ?>
 
-
+<br/>
+<button type="button"><a href="homepage.php">Home</a></button>
 
 
 </body>

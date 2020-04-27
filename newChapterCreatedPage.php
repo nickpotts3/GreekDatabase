@@ -49,6 +49,8 @@ Your id is: <?php echo $_POST["id"]; ?>
 }
     
 ?>
+<br/>
+<button type="button"><a href="homepage.php">Home</a></button>
     
 
 

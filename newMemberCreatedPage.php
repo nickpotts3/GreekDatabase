@@ -44,7 +44,8 @@ Welcome <?php echo $_POST["name"]; ?><br>
 }
     
 ?>
-    
+    <br/>
+    <button type="button"><a href="homepage.php">Home</a></button>
 
 
 </body>
