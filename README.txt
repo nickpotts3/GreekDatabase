@@ -6,6 +6,7 @@ Contributors:
   Nicholas Potts
   Daniel Hinz
   Matthew Miller
+  Noah Deucher
   
 Welcome to our Greek Database repo. This repo was created to meet the expectations of our Spirng 2020 KSU Database class project. 
 
