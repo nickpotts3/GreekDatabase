@@ -3,6 +3,7 @@
 <title>All Members</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="tableStyelsheet.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 <style>
@@ -44,8 +45,9 @@ body {font-size:16px;}
   <!-- Header -->
   <div class="w3-container" style="margin-top:80px" id="showcase">
     <h1 class="w3-jumbo"><b>Kent State</b></h1>
-    <h1 class="w3-xxxlarge w3-text-red"><b>Members</b></h1>
+    <h1 class="w3-xxxlarge w3-text-red"><b>All Members</b></h1>
     <hr style="width:50px;border:5px solid red" class="w3-round">
+    <button type="button"><a href="newMemberPage.php">Add A New Member</a></button>
   </div>
   
     <?php
@@ -65,18 +67,36 @@ body {font-size:16px;}
     //echo "Connected successfully";
     
     $sql = "SELECT * FROM Member";
-        
-    $newresult = $conn->query($sql);
+
     
-    if ($newresult->num_rows > 0) {
-        // output data of each row
-        while($row = $newresult->fetch_assoc()) {
-            echo "MID: " . $row["member_id"]. " - CID: " . $row["chapter_id"]. " - Name: " . $row["member_name"]. " Position: " . $row["member_position"]. "<br>";
-        }
-    } else {
-        echo "0 results";
-}
+        
+    //$newresult = $conn->query($sql);
+    $testResult = mysqli_query($conn, $sql);
     ?>
+
+
+<table style="background-color: #FAA77E ;">
+            <tr>
+                <td>Chapter</td>
+                <td>Name</td>
+                <td>Position</td>
+            </tr>
+
+            <?php while ($row1 = mysqli_fetch_array($testResult)):;?>
+            <?php
+            $chaptersql = "SELECT chapter_name FROM Chapter WHERE chapter_id = $row1[1]";
+            $result = mysqli_query($conn, $chaptersql);
+            $chaptername = mysqli_fetch_array($result);
+            ?>
+            <tr>
+                    <td><?php echo $chaptername[0];?></td>
+                    <td><?php echo $row1[2];?></td>
+                    <td><?php echo $row1[3];?></td>
+                   
+            </tr>
+<?php endwhile;?>
+
+        </table>
 
 
   

@@ -82,8 +82,6 @@ body {font-size:16px;}
 <!-- End page content -->
 </div>
 
-<!-- W3.CSS Container -->
-
 
 <script>
 // Script to open and close sidebar
